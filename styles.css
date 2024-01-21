@@ -1,0 +1,39 @@
+*{
+  list-style: none;
+
+}
+.valid {
+    border-color: green;
+  }
+  
+  .invalid {
+    border-color: red;
+  }
+  #validation-input {
+    border: 3px solid #bdbdbd;
+  }
+  
+  #validation-input.valid {
+    border-color: #4caf50;
+  }
+  
+  #validation-input.invalid {
+    border-color: #f44336;
+  }
+
+
+  #text {
+    font-size: 20px;
+  }
+
+
+  .gallery {
+   
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .gallery li {
+    margin: 10px;
+  }
