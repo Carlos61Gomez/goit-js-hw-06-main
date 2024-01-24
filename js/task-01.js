@@ -1,21 +1,13 @@
-// Obtener el elemento ul#categories
-const categoriesList = document.querySelector('#categories');
+const categoriesElement = document.getElementById("categories");
+const categoriesItems = categoriesElement.getElementsByClassName("item");
 
-// Obtener todos los elementos li.item dentro de ul#categories
-const items = categoriesList.querySelectorAll('li.item');
+console.log("Número de categorías:", categoriesItems.length);
 
-// Contar y mostrar el número de categorías
-console.log(`Número de categorías: ${items.length}`);
+for (let i = 0; i < categoriesItems.length; i++) {
+  const categoryItem = categoriesItems[i];
+  const titleElement = categoryItem.querySelector("h2");
+  const itemsList = categoryItem.querySelectorAll("li");
 
-// Recorrer cada elemento li.item
-items.forEach((item) => {
-  // Obtener el título del artículo (tag <h2>)
-  const title = item.querySelector('h2').textContent;
-
-  // Obtener el número de artículos en la categoría (todos los elementos <li> anidados)
-  const articleCount = item.querySelectorAll('li').length;
-
-  // Mostrar el título del artículo y el número de artículos en la categoría
-  console.log(`Título del artículo: ${title}`);
-  console.log(`Número de artículos en la categoría: ${articleCount}`);
-});
+  console.log("Categoría:", titleElement.textContent);
+  console.log("Elementos:", itemsList.length - 1);
+}

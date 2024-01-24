@@ -1,23 +1,19 @@
 const ingredients = [
-  'Potatoes',
-  'Mushrooms',
-  'Garlic',
-  'Tomatos',
-  'Herbs',
-  'Condiments',
+  "Potatoes",
+  "Mushrooms",
+  "Garlic",
+  "Tomatos",
+  "Herbs",
+  "Condiments",
 ];
-// Obtener el elemento ul#ingredients
-const ingredientsList = document.querySelector('#ingredients');
 
-// Recorrer el array de ingredientes y generar los elementos de la lista
-ingredients.forEach((ingredient) => {
-  // Crear un elemento li
-  const listItem = document.createElement('li');
-  
-  // Establecer el texto del elemento li
-  listItem.textContent = ingredient;
-  
-  // Agregar el elemento li a la lista ul
-  ingredientsList.appendChild(listItem);
+const ulElement = document.getElementById("ingredients");
+
+const liElements = ingredients.map((ingredient) => {
+  const liElement = document.createElement("li");
+  liElement.textContent = ingredient;
+  liElement.classList.add("item");
+  return liElement;
 });
 
+ulElement.append(...liElements);
